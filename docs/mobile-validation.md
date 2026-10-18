@@ -3,6 +3,7 @@
 ## Verified during development
 
 - Normal signed native Debug build and launch on a Lumen-owned iOS 27 simulator; no Apple account needed for the simulator.
+- Native arm64 iPhone Debug compilation also passed using released Xcode 27 (27A266a), with signing disabled. This is an unsigned device-targeted build, not an installed app or physical-device validation. Five native trust/parser tests also pass using that release toolchain.
 - Certificate enrollment, ordinary-light pairing, SecureStore save/read, room power, slider commit and scene recall against a disposable local HTTPS Hue fixture.
 - Replacing the fixture's certificate caused native pin rejection and a visible error; commands were not sent to the changed identity. Restoring the approved leaf allowed retry.
 - An external fixture light change appeared immediately through Hue SSE. Background/foreground exercised reconnect and authoritative reads in the simulator.
