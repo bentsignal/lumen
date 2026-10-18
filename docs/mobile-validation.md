@@ -4,6 +4,7 @@
 
 - Normal signed native Debug build and launch on a Lumen-owned iOS 27 simulator; no Apple account needed for the simulator.
 - Native arm64 iPhone Debug compilation also passed using released Xcode 27 (27A266a), with signing disabled. This is an unsigned device-targeted build, not an installed app or physical-device validation. Five native trust/parser tests also pass using that release toolchain.
+- A subsequent Debug development client was provisioned and signed with Shawn's personal team using released Xcode 27. Its signature and Lumen application/team entitlements were verified; wireless installation and launch succeeded on the physical iPhone. A private screenshot confirms Expo's Local Network onboarding. This does not yet verify permission, JavaScript loading or real bridge access.
 - Certificate enrollment, ordinary-light pairing, SecureStore save/read, room power, slider commit and scene recall against a disposable local HTTPS Hue fixture.
 - Replacing the fixture's certificate caused native pin rejection and a visible error; commands were not sent to the changed identity. Restoring the approved leaf allowed retry.
 - An external fixture light change appeared immediately through Hue SSE. Background/foreground exercised reconnect and authoritative reads in the simulator.
@@ -15,4 +16,4 @@
 
 ## Still required
 
-Physical iPhone dev-client signing/install and LAN validation are in progress at Shawn's request. Real bridge button pairing, Local Network denial/regrant, Keychain persistence, certificate handling, external Hue/Stream Deck changes and background/foreground must be exercised on that phone before claiming support. The new TV helper is not deployed yet; test its persistent overrides, restoration/handoff, engine recovery and actual tuning in an idle viewing window after preserving private rollback material. Final cold boot, AirPlay playback, HDR and extended reliability remain pending.
+Physical iPhone app LAN validation is in progress at Shawn's request; signing, wireless installation and initial launch are complete. Real bridge button pairing, Local Network denial/regrant, Keychain persistence, certificate handling, external Hue/Stream Deck changes and background/foreground must be exercised on that phone before claiming support. The new TV helper is not deployed yet; test its persistent overrides, restoration/handoff, engine recovery and actual tuning in an idle viewing window after preserving private rollback material. Final cold boot, AirPlay playback, HDR and extended reliability remain pending.
