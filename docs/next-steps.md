@@ -4,7 +4,7 @@
 
 Build Lumen: a React Native iOS companion app that pairs locally with existing Hue Bridge and TV, supports ordinary Hue lighting and TV sync controls, and coexists with Hue/Stream Deck. No cloud backend or database service. Native UI and robust development/CI practices based on Vera. Public GitHub repository under Shawn's bentsignal account. Working files in the Mac's Dev/lumen directory. Custom TV OS work is deferred.
 
-The current bootstrap contains the native app shell, quality gates, custom setup source, sanitized engine settings, and setup knowledge. It does NOT yet pair devices or control lights. Do not stop at the scaffold; the next thread implements the first real app slice.
+The first mobile feature implements trusted manual bridge entry, Hue button pairing, Keychain storage, native lights/rooms/scenes, bridge events/reconciliation, and TV controls backed by a new optional HTTPS policy helper. See [mobile controls](mobile-controls.md) for semantics and validation boundaries. The live legacy TV helper has not been auto-deployed or silently retuned. Physical iPhone signing, LAN testing and deliberate TV helper installation remain next steps before claiming household support.
 
 ## First implementation
 

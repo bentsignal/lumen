@@ -1,5 +1,7 @@
 {
   "host": "192.0.2.20",
+  "bridge_id": "<16-character-bridge-id>",
+  "device_id": "<stable-tv-identifier>",
   "username": "<hue-application-key>",
   "auth_id": "<application-auth-resource-id>",
   "area": "<entertainment-configuration-id>",
