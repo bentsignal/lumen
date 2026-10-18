@@ -1,0 +1,21 @@
+{
+  "$schema": "https://t3.codes/schema/t3.json",
+  "scripts": [
+    {
+      "name": "Setup Worktree",
+      "command": "scripts/worktree-setup.sh",
+      "icon": "configure",
+      "runOnWorktreeCreate": true
+    },
+    {
+      "name": "Mobile dev server",
+      "command": "pnpm dev",
+      "icon": "play"
+    },
+    {
+      "name": "Checks",
+      "command": "pnpm check",
+      "icon": "test"
+    }
+  ]
+}

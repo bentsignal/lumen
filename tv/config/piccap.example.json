@@ -1,0 +1,19 @@
+{
+  "priority": 150,
+  "nohdr": true,
+  "nopowerstate": false,
+  "backend": "libdile_vt",
+  "unix-socket": false,
+  "address": "127.0.0.1",
+  "port": 19400,
+  "width": 192,
+  "nv12": false,
+  "height": 108,
+  "quirks": 2,
+  "fps": 30,
+  "vsync": false,
+  "autostart": true,
+  "nogui": true,
+  "novideo": false,
+  "uibackend": "libgm"
+}

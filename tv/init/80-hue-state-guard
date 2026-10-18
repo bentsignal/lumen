@@ -1,0 +1,11 @@
+#!/bin/sh
+if test -f /tmp/hue-state-guard-ready; then exit 0; fi
+(
+    exec 200>&-
+    exec nohup /usr/bin/python /var/lib/webosbrew/hue-sync/guard.py </dev/null >/tmp/hue-state-guard.log 2>&1
+) &
+for i in 1 2 3 4 5; do
+    test -f /tmp/hue-state-guard-ready && break
+    sleep 1
+done
+exit 0

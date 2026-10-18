@@ -1,0 +1,7 @@
+{
+  "host": "192.0.2.20",
+  "username": "<hue-application-key>",
+  "auth_id": "<application-auth-resource-id>",
+  "area": "<entertainment-configuration-id>",
+  "lights": ["<gradient-light-id>", "<bottom-light-id>"]
+}

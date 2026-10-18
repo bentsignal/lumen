@@ -1,0 +1,35 @@
+{
+  "name": "lumen",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "packageManager": "pnpm@10.32.1",
+  "engines": {
+    "node": ">=24 <25",
+    "pnpm": "10.32.1"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @lumen/mobile dev",
+    "ios": "pnpm --filter @lumen/mobile ios",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "pnpm --filter @lumen/mobile typecheck",
+    "test": "python3 -m unittest discover -s tv/tests -v",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "check:secrets": "python3 scripts/check-secrets.py",
+    "bundle:ios": "pnpm --filter @lumen/mobile bundle:ios",
+    "react-doctor": "pnpm dlx react-doctor@0.9.14 apps/mobile --scope changed --blocking warning --no-telemetry --no-supply-chain --no-score --yes",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm format && pnpm check:secrets"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24",
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.46.0",
+    "typescript": "~6.0.3",
+    "ws": "^8.18.3"
+  }
+}

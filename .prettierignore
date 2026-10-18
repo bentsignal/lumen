@@ -1,0 +1,10 @@
+pnpm-lock.yaml
+node_modules
+.expo
+dist
+.local
+private
+backups
+logs
+apps/mobile/ios
+apps/mobile/android

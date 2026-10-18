@@ -1,0 +1,323 @@
+{
+  "automaticToneMapping": {
+    "enable": false,
+    "time_to_disable_tone_mapping": 500,
+    "time_to_tone_mapping": 30,
+    "tone_mapping_u_threshold": 175,
+    "tone_mapping_v_threshold": 160,
+    "tone_mapping_y_threshold": 180
+  },
+  "backgroundEffect": {
+    "color": [255, 138, 0],
+    "effect": "Rainbow swirl fast",
+    "enable": false,
+    "type": "effect"
+  },
+  "blackborderdetector": {
+    "blurRemoveCnt": 1,
+    "borderFrameCnt": 50,
+    "enable": false,
+    "maxInconsistentCnt": 10,
+    "mode": "default",
+    "threshold": 5,
+    "unknownFrameCnt": 600
+  },
+  "color": {
+    "channelAdjustment": [
+      {
+        "backlightColored": false,
+        "backlightThreshold": 0,
+        "black": [0, 0, 0],
+        "blue": [0, 0, 255],
+        "classic_config": true,
+        "cyan": [0, 255, 255],
+        "gamma": 1,
+        "green": [0, 255, 0],
+        "luminanceGain": 1,
+        "magenta": [255, 0, 255],
+        "powerLimit": 1,
+        "red": [255, 0, 0],
+        "saturationGain": 1,
+        "scaleOutput": 1,
+        "temperatureBlue": 1,
+        "temperatureGreen": 1,
+        "temperatureRed": 1,
+        "temperatureSetting": "disabled",
+        "white": [255, 255, 255],
+        "yellow": [255, 255, 0]
+      }
+    ],
+    "imageToLedMappingType": "advanced",
+    "sparse_processing": false
+  },
+  "device": {
+    "brightnessFactor": 1,
+    "clientkey": "<clientkey>",
+    "colorOrder": "rgb",
+    "convertToLinearRgb": false,
+    "entertainmentConfigurationId": "<entertainment-configuration-id>",
+    "maxRetry": 60,
+    "output": "https://192.0.2.20",
+    "refreshTime": 0,
+    "restoreOriginalState": false,
+    "switchOffOnBlack": false,
+    "transitiontime": 0,
+    "type": "philipshue",
+    "useEntertainmentAPI": true,
+    "useEntertainmentAPIV2": true,
+    "username": "<username>",
+    "verbose": false
+  },
+  "effects": {
+    "disable": [""],
+    "paths": ["$ROOT/custom-effects"]
+  },
+  "flatbufServer": {
+    "enable": true,
+    "hdrToneMapping": false,
+    "port": 19400,
+    "quarterOfFrameMode": false,
+    "timeout": 5
+  },
+  "foregroundEffect": {
+    "color": [255, 0, 0],
+    "duration_ms": 3000,
+    "effect": "Rainbow swirl fast",
+    "enable": false,
+    "type": "effect"
+  },
+  "forwarder": {
+    "enable": false,
+    "flat": ["remote_ip:19400"],
+    "json": []
+  },
+  "general": {
+    "disableLedsStartup": false,
+    "disableOnLocked": true,
+    "name": "LG TV Hue Sync",
+    "showOptHelp": true,
+    "version": 6
+  },
+  "jsonServer": {
+    "port": 19444
+  },
+  "ledConfig": {
+    "classic": {
+      "bottom": 0,
+      "edgegap": 0,
+      "glength": 0,
+      "gpos": 0,
+      "groupX": 0,
+      "groupY": 0,
+      "hdepth": 8,
+      "left": 0,
+      "overlap": 0,
+      "pblh": 0,
+      "pblv": 100,
+      "pbrh": 100,
+      "pbrv": 100,
+      "position": 0,
+      "ptlh": 0,
+      "ptlv": 0,
+      "ptrh": 100,
+      "ptrv": 0,
+      "reverse": false,
+      "right": 0,
+      "top": 1,
+      "vdepth": 5
+    },
+    "matrix": {
+      "cabling": "snake",
+      "ledshoriz": 1,
+      "ledsvert": 1,
+      "start": "top-left"
+    }
+  },
+  "leds": [
+    {
+      "group": 0,
+      "hmax": 0.15,
+      "hmin": 0,
+      "vmax": 1,
+      "vmin": 0.6
+    },
+    {
+      "group": 0,
+      "hmax": 0.15,
+      "hmin": 0,
+      "vmax": 0.6,
+      "vmin": 0.2
+    },
+    {
+      "group": 0,
+      "hmax": 0.33,
+      "hmin": 0,
+      "vmax": 0.15,
+      "vmin": 0
+    },
+    {
+      "group": 0,
+      "hmax": 0.67,
+      "hmin": 0.33,
+      "vmax": 0.15,
+      "vmin": 0
+    },
+    {
+      "hmax": 1,
+      "hmin": 0.67,
+      "vmax": 0.15,
+      "vmin": 0
+    },
+    {
+      "hmax": 1,
+      "hmin": 0.85,
+      "vmax": 0.6,
+      "vmin": 0.2
+    },
+    {
+      "hmax": 1,
+      "hmin": 0.85,
+      "vmax": 1,
+      "vmin": 0.6
+    },
+    {
+      "hmax": 0.95,
+      "hmin": 0.05,
+      "vmax": 1,
+      "vmin": 0.85
+    }
+  ],
+  "logger": {
+    "level": "debug"
+  },
+  "mqtt": {
+    "custom_topic": "",
+    "disableApiAccess": false,
+    "enable": false,
+    "host": "",
+    "ignore_ssl_errors": true,
+    "is_ssl": false,
+    "maxRetry": 0,
+    "password": "",
+    "port": 1883,
+    "username": ""
+  },
+  "network": {
+    "apiAuth": true,
+    "internetAccessAPI": false,
+    "ipWhitelist": [],
+    "localAdminAuth": true,
+    "localApiAuth": false,
+    "restirctedInternetAccessAPI": false
+  },
+  "protoServer": {
+    "enable": false,
+    "port": 19445,
+    "timeout": 5
+  },
+  "rawUdpServer": {
+    "enable": false,
+    "port": 5568,
+    "priority": 109
+  },
+  "smoothing": {
+    "antiFlickeringFilter": true,
+    "continuousOutput": true,
+    "damping": 26,
+    "enable": true,
+    "smoothingFactor": 0,
+    "stiffness": 150,
+    "time_ms": 150,
+    "type": "RgbInterpolator",
+    "updateFrequency": 50,
+    "y_limit": 0.03
+  },
+  "soundEffect": {
+    "device": "default",
+    "enable": false,
+    "enable_smoothing": true
+  },
+  "systemControl": {
+    "cecControl": false,
+    "systemInstanceEnable": false,
+    "systemInstancePriority": 245
+  },
+  "systemGrabber": {
+    "blueSignalThreshold": 5,
+    "cropBottom": 0,
+    "cropLeft": 0,
+    "cropRight": 0,
+    "cropTop": 0,
+    "device": "auto",
+    "fps": 20,
+    "greenSignalThreshold": 5,
+    "hardware": true,
+    "hdrToneMapping": false,
+    "monitor_nits": 200,
+    "noSignalCounterThreshold": 200,
+    "redSignalThreshold": 5,
+    "reorder_displays": 0,
+    "sDHOffsetMax": 0.75,
+    "sDHOffsetMin": 0.25,
+    "sDVOffsetMax": 0.75,
+    "sDVOffsetMin": 0.25,
+    "signalDetection": false,
+    "videoMode": 512
+  },
+  "videoControl": {
+    "cecControl": false,
+    "videoInstanceEnable": true,
+    "videoInstancePriority": 240
+  },
+  "videoDetection": {
+    "height": 0,
+    "quality": 0,
+    "signature": "",
+    "width": 0
+  },
+  "videoGrabber": {
+    "autoResume": false,
+    "autoSignalDetection": false,
+    "blueSignalThreshold": 5,
+    "cecHdrStart": 0,
+    "cecHdrStop": 0,
+    "cropBottom": 0,
+    "cropLeft": 0,
+    "cropRight": 0,
+    "cropTop": 0,
+    "device": "auto",
+    "errorTolerance": 9,
+    "fps": 0,
+    "fpsSoftwareDecimation": 1,
+    "greenSignalThreshold": 5,
+    "hardware_brightness": 0,
+    "hardware_contrast": 0,
+    "hardware_hue": 0,
+    "hardware_saturation": 0,
+    "hdrToneMapping": false,
+    "input": -1,
+    "led_off_pause": false,
+    "modelTolerance": 90,
+    "noSignalCounterThreshold": 200,
+    "qFrame": false,
+    "redSignalThreshold": 5,
+    "sDHOffsetMax": 0.75,
+    "sDHOffsetMin": 0.25,
+    "sDVOffsetMax": 0.75,
+    "sDVOffsetMin": 0.25,
+    "saveResources": false,
+    "signalDetection": false,
+    "sleepTime": 5000,
+    "videoEncoding": "auto",
+    "videoMode": "auto",
+    "wakeTime": 1000
+  },
+  "webConfig": {
+    "crtPath": "",
+    "document_root": "",
+    "keyPassPhrase": "",
+    "keyPath": "",
+    "port": 8090,
+    "sslPort": 8092
+  }
+}
