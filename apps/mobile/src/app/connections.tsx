@@ -65,10 +65,7 @@ function BridgePairing() {
           text={host}
           placeholder="Bridge address"
           modifiers={[...inputModifiers, accessibilityLabel("Bridge address")]}
-          onTextChange={(value) => {
-            host.set(value);
-            probe.reset();
-          }}
+          onTextChange={() => probe.reset()}
         />
         <TextField
           key="bridge-id"
@@ -76,10 +73,7 @@ function BridgePairing() {
           placeholder="Bridge ID from Hue app"
           maxLength={16}
           modifiers={[...inputModifiers, accessibilityLabel("Bridge ID")]}
-          onTextChange={(value) => {
-            identity.set(value);
-            probe.reset();
-          }}
+          onTextChange={() => probe.reset()}
         />
         <Button
           label={probe.isPending ? "Checking…" : "Verify bridge"}
@@ -149,7 +143,6 @@ function TVConnection() {
           text={host}
           placeholder="TV address"
           modifiers={[...inputModifiers, accessibilityLabel("TV address")]}
-          onTextChange={(value) => host.set(value)}
         />
         <TextField
           text={fingerprint}
@@ -158,13 +151,11 @@ function TVConnection() {
             ...inputModifiers,
             accessibilityLabel("TV certificate fingerprint"),
           ]}
-          onTextChange={(value) => fingerprint.set(value)}
         />
         <SecureField
           text={key}
           placeholder="Access token"
           modifiers={[...inputModifiers, accessibilityLabel("TV access token")]}
-          onTextChange={(value) => key.set(value)}
         />
         <Button
           label={connect.isPending ? "Connecting…" : "Connect TV"}
