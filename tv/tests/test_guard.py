@@ -5,9 +5,11 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import sys
 from unittest.mock import patch
 
 CONFIG = {'host': '192.0.2.20', 'username': 'test-key', 'auth_id': 'our-app', 'area': 'area', 'lights': ['strip']}
+sys.path.insert(0, str(Path(__file__).parents[1]))
 spec = importlib.util.spec_from_file_location('guard', Path(__file__).parents[1] / 'guard.py')
 guard = importlib.util.module_from_spec(spec)
 with patch('builtins.open', return_value=io.StringIO(json.dumps(CONFIG))):
@@ -44,10 +46,15 @@ class RestorationTests(unittest.TestCase):
         api.assert_called_once_with('entertainment_configuration/area')
 
     def test_poweroff_stops_our_stream_before_restoring(self):
-        with patch.object(guard, 'api', return_value=[{'status': 'active', 'active_streamer': {'rid': 'our-app'}}]) as api:
+        with patch.object(guard, 'api', side_effect=[[{'status': 'active', 'active_streamer': {'rid': 'our-app'}}], [], [{'status': 'inactive'}], []]) as api:
             guard.restore(stop_stream=True)
         self.assertEqual(api.call_args_list[1].args, ('entertainment_configuration/area', 'PUT', {'action': 'stop'}))
-        self.assertEqual(api.call_args_list[2].args, ('light/strip', 'PUT', self.state['strip']))
+        self.assertEqual(api.call_args_list[3].args, ('light/strip', 'PUT', self.state['strip']))
+
+    def test_new_stream_after_stop_blocks_restoration(self):
+        with patch.object(guard, 'api', side_effect=[[{'status': 'active', 'active_streamer': {'rid': 'our-app'}}], [], [{'status': 'active', 'active_streamer': {'rid': 'other'}}]]) as api:
+            self.assertFalse(guard.restore(stop_stream=True))
+        self.assertFalse(any(call.args[0] == 'light/strip' for call in api.call_args_list))
 
 
 if __name__ == '__main__':

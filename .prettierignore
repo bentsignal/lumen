@@ -8,3 +8,5 @@ backups
 logs
 apps/mobile/ios
 apps/mobile/android
+.build
+.swiftpm

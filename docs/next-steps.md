@@ -4,7 +4,7 @@
 
 Build Lumen: a React Native iOS companion app that pairs locally with existing Hue Bridge and TV, supports ordinary Hue lighting and TV sync controls, and coexists with Hue/Stream Deck. No cloud backend or database service. Native UI and robust development/CI practices based on Vera. Public GitHub repository under Shawn's bentsignal account. Working files in the Mac's Dev/lumen directory. Custom TV OS work is deferred.
 
-The current bootstrap contains the native app shell, quality gates, custom setup source, sanitized engine settings, and setup knowledge. It does NOT yet pair devices or control lights. Do not stop at the scaffold; the next thread implements the first real app slice.
+The first mobile feature implements trusted manual bridge entry, Hue button pairing, Keychain storage, native lights/rooms/scenes, bridge events/reconciliation, and TV controls backed by a new optional HTTPS policy helper. See [mobile controls](mobile-controls.md) for semantics and validation boundaries. The live legacy TV helper has not been auto-deployed or silently retuned. The development client is signed with Shawn's personal team and installed/launched wirelessly on his iPhone. Physical app LAN testing and deliberate TV helper installation remain next steps before claiming household support.
 
 ## First implementation
 
@@ -13,7 +13,7 @@ The current bootstrap contains the native app shell, quality gates, custom setup
 3. Add actual light/room on-off/dimming and scenes. Subscribe to bridge events with initial fetch and reconnect/foreground reconciliation. Optimistic controls must handle failures. Keep ordinary lighting usable with TV offline.
 4. Add actual sync status and tuning. Preserve150 ms baseline, save named presets separately, serialize full merged config writes, and add tests for config preservation. Avoid sending a full engine reconfiguration on every slider pixel; debounce/commit changes.
 5. Add TV desired-state persistence and authenticated API for Auto/On/Off and pause-this-session, with one clear owner coordinating power/retry/manual handoff. Prevent the current recovery helper from overriding explicit Off. Handle startup order, alternate streamer ownership, stop/restore/scene races, unavailable bridge and TV power transitions.
-6. Verify simulator native UI and physical iPhone LAN behavior. Obtain user testing before merge/release. No production EAS/Apple app/signing setup has been done for Lumen.
+6. Verify simulator native UI and physical iPhone LAN behavior. Obtain user testing before merge/release. Local development signing is configured privately; no production EAS/App Store setup has been done for Lumen.
 
 Later: computer app/control surface, Stream Deck action using the same TV policy endpoint, optional bounded motion-aware response, wider hardware support. Complete outstanding final cold-boot and AirPlay checks when the user is available; do not interrupt viewing unnecessarily.
 

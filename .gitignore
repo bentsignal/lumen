@@ -33,3 +33,5 @@ known_hosts
 __pycache__/
 *.pyc
 .DS_Store
+.build/
+.swiftpm/

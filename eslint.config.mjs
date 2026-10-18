@@ -7,6 +7,8 @@ export default tseslint.config(
     ignores: [
       "**/node_modules/**",
       "**/.expo/**",
+      "**/.local/**",
+      "**/.build/**",
       "**/dist/**",
       "**/ios/**",
       "**/android/**",

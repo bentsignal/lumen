@@ -1,0 +1,7 @@
+{
+  "bind": "192.0.2.10",
+  "token": "<generate-a-random-access-token-outside-git>",
+  "certificate": "/var/lib/webosbrew/hue-sync/control-cert.pem",
+  "private_key": "/var/lib/webosbrew/hue-sync/control-key.pem",
+  "engine_password": "<hyperhdr-admin-password>"
+}

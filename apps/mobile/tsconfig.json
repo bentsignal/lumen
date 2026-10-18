@@ -4,6 +4,8 @@
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "types": ["node", "react"],
     "paths": {
       "~/*": ["./src/*"]
     }

@@ -36,3 +36,8 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: pnpm react-doctor --base "$BASE_SHA"
       - run: pnpm bundle:ios
+  native-trust:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: swift test --package-path apps/mobile/modules/lumen-lan

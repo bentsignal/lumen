@@ -1,12 +1,13 @@
 # Lumen
 
-A local-first iOS app for Hue lights and TV-native video syncing. React Native + Expo, using native UI components. The working TV setup is already installed; the mobile app currently has its native scaffold and development checks. Pairing and usable lighting/sync controls are the next milestone.
+A local-first iOS app for Hue lights and TV-native video syncing. React Native + Expo, using native UI components. The mobile app implements local bridge pairing, lights, rooms, scenes and TV policy controls. TV controls require installing the new authenticated helper; the existing TV setup is not changed by a checkout. Physical iPhone validation remains pending.
 
 ## Development
 
 Node24, pnpm10.32.1, Python3. Install with `pnpm install --frozen-lockfile`.
 
-- `pnpm check`: lint, types, TV-helper regression tests, formatting, secret hygiene.
+- `pnpm check`: lint, types, protocol/TV-helper regression tests, formatting, secret hygiene.
+- `pnpm test:native`: Swift device-trust and SSE parser tests (Mac).
 - `pnpm bundle:ios`: validate the iOS JavaScript bundle.
 - `pnpm ios`: create/run a local iOS development build (Xcode required).
 - `pnpm dev`: serve the development app on your LAN.
@@ -15,8 +16,8 @@ Start with [AGENTS.md](AGENTS.md), [architecture](docs/architecture.md), [verifi
 
 ## Layout
 
-- `apps/mobile`: Expo/React Native iOS scaffold.
-- `tv`: source of our deployed state-restoration/recovery helper and sanitized configuration examples.
+- `apps/mobile`: Expo/React Native app and scoped native LAN transport.
+- `tv`: restoration/recovery helper, optional HTTPS policy API and sanitized configuration examples.
 - `tools/archive`: custom diagnostic source from setup, anonymized and documented.
 - `docs`: decisions, hardware compatibility, operating instructions, evidence, and development handoff.
 
